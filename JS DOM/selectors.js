@@ -91,7 +91,6 @@ secondItem.style.color = 'red'
 
 let thirdItem = document.querySelector('.list-group-item:nth-child(2)')
 thirdItem.style.color = 'orange'
-*/
 
 // Queryselector all - grab ore than  one thing
 
@@ -112,6 +111,9 @@ for (let i = 0; i < even.length; i++) {
     even[i].style.color = 'red'
 }
 
+*/
+
+//Traversing DOM
 
 
 
