@@ -1,3 +1,4 @@
+/*
 // Examine document objects
 console.dir(document)
 
@@ -71,7 +72,6 @@ for (let i = 0; i < li.length; i++) {
 let header = document.querySelector('#main-header')
 header.style.borderBottom = 'solid 4px Blue'
 
-
 let input = document.querySelector('input')
 input.value = "Hello Siddhesh"
 
@@ -81,9 +81,54 @@ submit.value = "Send"
 
 let item = document.querySelector('.list-group-item')
 
-item.style.color = "Red"
+item.style.color = "blue"
 
 // let lastItem = document.querySelector('.list-group-item : last-child')
-let lastItem = document.querySelector('.list-group-item : nthchild()')
-lastItem.style.color = 'blue'
+
+let secondItem = document.querySelector('.list-group-item:last-child')
+secondItem.style.color = 'red'
+
+
+let thirdItem = document.querySelector('.list-group-item:nth-child(2)')
+thirdItem.style.color = 'orange'
+*/
+
+// Queryselector all - grab ore than  one thing
+
+let titles = document.querySelectorAll('.title')
+
+titles[1].textContent = "Hello JavaScript"
+
+let odd = document.querySelectorAll('li:nth-child(odd)')
+
+
+for (let i = 0; i < odd.length; i++) {
+    odd[i].style.backgroundColor = '#f4f4f4'
+}
+let even = document.querySelectorAll('li:nth-child(even)')
+
+for (let i = 0; i < even.length; i++) {
+    even[i].style.backgroundColor = '#ccc'
+    even[i].style.color = 'red'
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
