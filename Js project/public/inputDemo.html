@@ -9,6 +9,7 @@
       rel="stylesheet"
       href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
+    <link rel="stylesheet" href="../node_modules/mdbootstrap/css/mdb.css" />
     <link
       rel="stylesheet"
       href="../node_modules/bootstrap-icons/font/bootstrap-icons.min.css"
@@ -22,14 +23,14 @@
         type="button"
         data-bs-toggle="modal"
         data-bs-target="#register"
-        class="btn btn-outline-success"
+        class="btn btn-sm btn-success"
       >
         Register Product
       </button>
     </div>
 
     <div id="register" class="fade modal">
-      <div class="modal-dialog">
+      <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
             <h3 class=""><span class="bi bi-cart4"></span>Register-product</h3>
@@ -68,13 +69,13 @@
           <div class="modal-footer">
             <button
               onclick="registerClick()"
-              class="btn btn-success"
+              class="btn btn-sm btn-success"
               id="register-btn"
               data-bs-dismiss="modal"
             >
               Register
             </button>
-            <button class="btn btn-danger" data-bs-dismiss="modal">
+            <button class="btn btn-sm btn-danger" data-bs-dismiss="modal">
               Cancel
             </button>
           </div>
@@ -100,15 +101,19 @@
         onclick="editClick()"
         data-bs-toggle="modal"
         data-bs-target="#register"
-        class="btn btn-warning"
+        class="btn btn-sm btn-warning"
       >
         <span class="bi bi-pen"></span> Edit
       </button>
-      <a href="./inputDemo.html" class="btn btn-primary"> New Product </a>
+      <a href="./inputDemo.html" class="btn btn-sm btn-primary">
+        New Product
+      </a>
     </div>
 
     <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/mdbootstrap/js/jquery.js"></script>
     <!-- <script src="."></script> -->
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="../node_modules/mdbootstrap/js/mdb.min.js"></script>
   </body>
 </html>

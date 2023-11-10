@@ -18,5 +18,5 @@ function registerClick() {
 
 function editClick(){
     document.getElementById('register-btn').innerHTML ="Save"
-    document.getElementById('register-btn').className ="btn btn-info"
+    document.getElementById('register-btn').className ="btn btn-sm btn-info"
 }
