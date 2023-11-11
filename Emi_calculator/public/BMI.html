@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI Calculator</title>
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <style>
+      .box {
+        background-color: rgb(255, 255, 255);
+        box-shadow: 2px 6px 3px gray;
+        padding: 20px 10px;
+        border-radius: 20px;
+      }
+    </style>
+    <script>
+      function bodyLoad() {
+        var YourWeight = parseInt(prompt("weight : "));
+        var YourStatus = document.getElementById("yourStatus");
+
+        if (YourWeight < 53) {
+          YourStatus.style.marginLeft = "200px";
+        } else if (YourWeight >= 54 && YourWeight < 70) {
+          YourStatus.style.marginLeft = "600px";
+        }
+      }
+    </script>
+  </head>
+  <body class="container-fluid" onload="bodyLoad()">
+    <h1 class="m-5">BMI Calculator</h1>
+    <div class="progress">
+      <div class="progress-bar bg-dark me-1" style="width: 400px">
+        Under Weight below < 53 Kg
+      </div>
+      <div class="progress-bar bg-success me-1" style="width: 400px">
+        Normal Weight below 54 to 70 Kg
+      </div>
+      <div class="progress-bar bg-warnig me-1" style="width: 400px">
+        Over Weight below 70 to 86 Kg
+      </div>
+      <div class="progress-bar bg-danger" style="width: 400px">
+        Obese Weight below > 86 Kg
+      </div>
+    </div>
+    <div id="yourStatus">
+      <span class="bi bi-caret-up-fill"></span>
+    </div>
+    <script src="../src/BMI.js"></script>
+  </body>
+</html>
