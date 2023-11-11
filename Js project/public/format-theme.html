@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js Project</title>
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+
+    <style>
+        .dark-theme{
+            padding: 50px;
+            background-color: rgba(0, 0, 0, 0.849);
+            color: whitesmoke;
+            border-radius: 20px;
+        }
+    </style>
+
+    <script>
+        function themeChange(){
+            var themeCheckbox = document.getElementById('theme-checkbox')
+            var frmLogin = document.getElementById('frm-login')
+            var loginBtn = document.querySelector('button')
+
+            if(themeCheckbox.checked){
+                frmLogin.className = "dark-theme"
+                loginBtn.className = "btn-light btn w-100"
+            }else{
+                frmLogin.className = "p-3"
+                loginBtn.className = "btn-dark btn w-100"
+            }
+        }
+    </script>
+  </head>
+  <body class="container-fluid">
+    <div class="d-flex justify-content-center align-items-center" style="height: 400px;">
+      <form id="frm-login">
+        <div class="form-switch">
+            <input type="checkbox" onchange="themeChange()" id="theme-checkbox" class="form-check-input" name="" id=""> Dark Theme
+        </div>
+
+        <h2><span class="bi bi-person-fill">User Login</span></h2>
+      <dl>
+        <dt>User Name</dt>
+        <dd><input class="form-control" type="text" /></dd>
+        <dt>Password</dt>
+        <dd><input type="password" class="form-control" /></dd>
+      </dl>
+      <button class="btn btn-success w-100">Login</button>
+    </div>
+      </form>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  </body>
+</html>
