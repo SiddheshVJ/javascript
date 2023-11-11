@@ -6,8 +6,44 @@
     <title>Js Project</title>
     <script src="./node_modules/bootstrap/dist/css/bootstrap.min.css"></script>
     <script src="./node_modules/bootstrap-icons/font/bootstrap-icons.css"></script>
+
+    <style>
+      .error-msg {
+        font-size: 2.5rem;
+        background-color: red;
+        color: yellow;
+      }
+    </style>
+    <script type="text/javascript">
+      function Register() {
+        var userName = document.getElementById("userName").value;
+        var userError = document.getElementById("userError");
+
+        if (!userName) {
+          userError.innerHTML = "User Name Required";
+          userError.className = "error-msg";
+        } else {
+          document.write(`Registered...`);
+        }
+      }
+
+      function capitalChar() {
+        var IFSC = document.getElementById("IFSC").value;
+        document.getElementById("IFSC").value = IFSC.toUpperCase();
+      }
+    </script>
   </head>
   <body>
+    <!-- String Formatting -->
+    <dl>
+      <dt>User Name :</dt>
+      <dd><input type="text" id="userName" /></dd>
+      <dd id="userError"></dd>
+      <dt>IFSC :</dt>
+      <dd><input onkeyup="capitalChar()" type="text" size="5" id="IFSC" /></dd>
+      <button onclick="Register()">Register</button>
+    </dl>
+
     <script src="./node_modules/jquery/dist/jquery.js"></script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
   </body>
