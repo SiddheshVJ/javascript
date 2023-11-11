@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js Project</title>
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+
+    <script>
+      function submitClick() {
+        var userName = document.getElementById("userName").value;
+        var userError = document.getElementById("userError");
+
+        if (!userName) {
+          userError.innerHTML = "User Name Required".fontcolor("red");
+        } else {
+          document.write("Registered");
+        }
+      }
+
+      function verifyName() {
+        var userName = document.getElementById("userName").value;
+        var userError = document.getElementById("userError");
+
+        if (!userName) {
+          userError.innerHTML = "Username required".fontcolor("red");
+        }
+        if (userName.length < 4) {
+          userError.innerHTML = "Name too short minimum 4 chars".fontcolor(
+            "red"
+          );
+        }
+
+        if (userName.length < 10 && userName.length >= 4)
+          userError.innerHTML = "Name is right ".fontcolor("green");
+
+        if (userName.length > 10)
+          userError.innerHTML = "Name too long maximum 10 chars".fontcolor(
+            "red"
+          );
+      }
+    </script>
+  </head>
+  <body class="container-fluid">
+    <dl>
+      <dt>User Name :</dt>
+      <dd>
+        <input type="text" onkeyup="verifyName()" name="" id="userName" />
+      </dd>
+      <dd id="userError"></dd>
+    </dl>
+    <button onclick="submitClick()" class="btn btn-dark">Submit</button>
+
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  </body>
+</html>
