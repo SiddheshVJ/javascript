@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boolean</title>
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+
+    <script>
+        let stockChanged = () => {
+          var stcokcheck = document.getElementById("stock");
+          var lblstock = document.getElementById("lblstock");
+
+          stcokcheck.checked
+            ? (lblstock.innerHTML = "Stock Available")
+            : (lblstock.innerHTML = "Out of Stock");
+        };
+        let onSortClick = () => {
+          var span = document.querySelector("button span");
+          span.className =
+            span.className == "bi bi-sort-alpha-down"
+              ? "bi bi-sort-alpha-up"
+              : "bi bi-sort-alpha-down";
+        };
+
+      let verifyName = () => {
+        var txtname = document.getElementById("username").value;
+        var btn = document.getElementById("disable");
+        !txtname
+          ? (btn.className = "btn btn-success disabled")
+          : (btn.className = "btn btn-success active");
+      };
+    </script>
+  </head>
+
+  <body class="container-fluid">
+    <div class="form-switch">
+      <input
+        type="checkbox"
+        id="stock"
+        onchange="stockChanged()"
+        class="form-check-input"
+      />
+      <span id="lblstock"></span>
+    </div>
+    <h2>Button Toggle</h2>
+    <button onclick="onSortClick()" class="btn btn-outline-danger" id="sort">
+      <span class="bi bi-sort-alpha-down"></span>
+    </button>
+    <div class="form-group w-25 mt-5">
+      <input
+        onblur="verifyName()"
+        id="username"
+        placeholder="enter name"
+        type="text"
+        class="m-1 form-control"
+      />
+      <button id="disable" class="btn btn-outline-dark-green">REGISTER</button>
+    </div>
+  </body>
+</html>
