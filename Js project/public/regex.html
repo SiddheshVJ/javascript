@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+  </head>
+  <body class="container-fluid">
+    <h2>Verify Mobile</h2>
+    <dl class="w-25">
+      <dt>Your Country</dt>
+      <dd class="input-group">
+        <img
+          width="100"
+          id="flag"
+          height="50"
+          class="input-group-text"
+          src=""
+          alt=""
+        />
+        <select
+          onchange="countryChange()"
+          class="form-select"
+          name=""
+          id="lst-country"
+        >
+          <option value="">Select Country</option>
+          <option value="india">India</option>
+          <option value="us">US</option>
+          <option value="uk">UK</option>
+        </select>
+      </dd>
+      <dt>Your Mobile</dt>
+      <dd>
+        <input
+          type="text"
+          onchange="countryChange()"
+          size="4"
+          class="form-control"
+          id="txtmobile"
+        />
+      </dd>
+      <dd class="text-danger" id="mobileerr"></dd>
+    </dl>
+    <button onclick="registerClick()" class="btn btn-blue">SUBMIT</button>
+
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="../src/js/regex.js"></script>
+  </body>
+</html>
