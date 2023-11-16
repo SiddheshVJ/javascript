@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Project</title>
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+
+    <script>
+      let cities = ["Delhi", "Hyd", "Mumbai"];
+
+      function addCities() {
+        let city = document.getElementById("txtCity").value;
+
+        if (cities.indexOf(city) == -1) {
+          cities.push(city);
+          let cityErr = document.getElementById("cityErr");
+          cityErr.style.color = "Green";
+          cityErr.innerHTML = "City Added !!!";
+          loadCities();
+          document.getElementById("txtCity").value = "";
+        } else {
+          let cityErr = document.getElementById("cityErr");
+          cityErr.style.color = "Red";
+          cityErr.innerHTML = "City Already Exists";
+        }
+      }
+
+      function loadCities() {
+        for (var city of cities) {
+          var option = document.createElement("option");
+          option.text = city;
+          option.value = city;
+          document.getElementById("lstCities").appendChild(option);
+        }
+        document.getElementById(
+          "lblCount"
+        ).innerHTML = `Total number of cities : ${cities.length}`;
+        cities.length = 0;
+      }
+
+      let bodyLoad = () => {
+        loadCities();
+      };
+    </script>
+  </head>
+  <body onload="bodyLoad()" class="container-fluid">
+    <h1>Array Manipulation</h1>
+    <div class="mt-3 mb-3 w-25">
+      <div class="input-group">
+        <span class="input-group-text">New City : </span>
+        <input type="text" class="form-control" name="" id="txtCity" />
+        <button onclick="addCities()" class="btn btn-primary">ADD</button>
+      </div>
+      <span id="cityErr"></span>
+    </div>
+    <div class="w-25">
+      <label class="form-lable" for="">Your Cities</label>
+      <select size="3" name="" class="form-select" id="lstCities"></select>
+      <label for="" class="form-lable" id="lblCount"></label>
+    </div>
+
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  </body>
+</html>
