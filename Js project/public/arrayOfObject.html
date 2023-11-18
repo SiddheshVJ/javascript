@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.css"
+      rel="stylesheet"
+    />
+
+    <script>
+      var data = [
+        { Category: "Electronics", Products: ["Television", "Mobiles"] },
+        { Category: "Footwear", Products: ["Chapels", "Shoes"] },
+      ];
+
+      function bodyLoad() {
+        for (var item of data) {
+          var li = document.createElement("li");
+          li.innerHTML = item.Category;
+
+          var optGrp = document.createElement("optgroup");
+          optGrp.label = item.Category;
+
+          for (var product of item.Products) {
+            var ul = document.createElement("ul");
+            var ulLi = document.createElement("li");
+            ulLi.innerHTML = product;
+            ul.appendChild(ulLi);
+            li.appendChild(ul);
+
+            var option = document.createElement("option");
+            option.text = product;
+            option.value = product;
+            optGrp.appendChild(option);
+          }
+          document.querySelector("ol").appendChild(li);
+          document.querySelector("select").appendChild(optGrp);
+        }
+      }
+    </script>
+  </head>
+  <body onload="bodyLoad()">
+    <ol></ol>
+    <select class="form-control w-25 text-center"></select>
+
+    <!-- MDB -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.2/mdb.min.js"
+    ></script>
+  </body>
+</html>
